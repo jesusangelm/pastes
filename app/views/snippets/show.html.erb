@@ -1,0 +1,24 @@
+<h1>Snippet</h1>
+
+<p>
+<%= link_to "Eliminar", @snipper, method: :delete,
+        data: { confirm: "Seguro?" } %> |
+<%= link_to "Inicio", root_path %>
+</p>
+
+<p>
+<strong>Titulo:</strong>
+<%= @snippet.title.capitalize %>
+</p>
+
+<p>
+<strong>Lenguaje:</strong>
+<%= @snippet.lang.capitalize %>
+</p>
+
+<p>
+<strong>Codigo:</strong>
+</p>
+<p>
+<%= raw Rouge.highlight @snippet.code, @snippet.lang, "html" %>
+</p>

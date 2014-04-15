@@ -1,0 +1,21 @@
+<h1>Lista de Snippets</h1>
+
+<p><%= link_to "Nuevo Snippet", new_snippet_path %></p>
+
+<table class="table table-striped table-bordered table-hover">
+  <tr>
+    <th>Titulo</th>
+    <th>Lenguaje</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @snippets.each do |s| %>
+    <tr>
+    <td><%= s.title %></td>
+    <td><%= s.lang %></td>
+    <td><%= link_to 'Mostrar', snippet_path(s) %></td>
+    <td><%= link_to 'Eliminar', s, method: :delete,
+      data: { confirm: "Seguro?" } %></td>
+  </tr>
+<% end %>
+</table>
